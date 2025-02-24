@@ -55,3 +55,34 @@ const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
 console.log(mgr1.getDetails()); // Display manager details
 console.log(`Bonus: $${mgr1.calculateBonus()}`); // Show bonus amount
 console.log("Task 2 Completed\n");
+
+
+// Task 3 - Company Class
+// A Company class that keeps track of employees.
+// Can add new employees and list them.
+
+class Company {
+    constructor(name) {
+        this.name = name;
+        this.employees = [];
+    }
+
+    // Adds an employee and logs their details
+    addEmployee(employee) {
+        this.employees.push(employee);
+        console.log(`Added employee: ${employee.getDetails()}`);
+    }
+
+    // Lists all employees in the company
+    listEmployees() {
+        console.log("Listing all employees:");
+        this.employees.forEach(emp => console.log(emp.getDetails()));
+    }
+}
+
+// Test Task 3
+const company = new Company("TechCorp");
+company.addEmployee(emp1);
+company.addEmployee(mgr1);
+company.listEmployees(); // Show all employees
+console.log("Task 3 Completed\n");
